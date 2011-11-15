@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+DH_VERBOSE=1
+pn=$(shell dpkg-parsechangelog | grep ^Source | cut -d' ' -f2)
+ov=$(shell dpkg-parsechangelog | grep ^Version | cut -d' ' -f2 | cut -d'-' -f1)
+
+get-orig-source:
+	dh_testdir
+	fakeroot dh clean
+	-git archive -v --format=tar --prefix $(pn)-$(ov)/ HEAD | \
+		gzip -9c > $(CURDIR)/../$(pn)_$(ov).orig.tar.gz
+
+%:
+	dh $@
+

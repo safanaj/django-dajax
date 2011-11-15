@@ -1,0 +1,5 @@
+django-dajax (0.8.4+0-servabit0) unstable; urgency=low
+
+  * Initial package
+
+ -- Marco Bardelli <marco.bardelli@servabit.it>  Tue, 15 Nov 2011 10:34:14 +0100

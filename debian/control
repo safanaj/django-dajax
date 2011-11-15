@@ -1,0 +1,27 @@
+Source: django-dajax
+Section: python
+Priority: extra
+Build-Depends-Indep: python-support (>= 1.0)
+Build-Depends: debhelper (>= 7.0.50~), quilt
+Maintainer: Marco Bardelli <marco.bardelli@servabit.it>
+Standards-Version: 3.9.1
+XS-Python-Version: >= 2.6
+
+Package: python-django-dajax
+Section: python
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-django,
+ python-django-dajaxice
+Description: Dajax is Ajax for Django.
+ Dajax is a powerful tool to easily and super-fastly develop
+ asynchronous presentation logic in web applications using python and
+ almost no lines of JS source code.
+ .
+ It supports up to four of the most popular JS frameworks: Prototype,
+ jQuery, Dojo and mootols.
+ .
+ Using dajaxice communication core, dajax implements an abstraction
+ layer between the presentation logic managed with JS and your python
+ business logic. With dajax you can modify your DOM structure directly
+ from python.
