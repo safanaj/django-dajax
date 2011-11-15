@@ -6,7 +6,8 @@ ov=$(shell dpkg-parsechangelog | grep ^Version | cut -d' ' -f2 | cut -d'-' -f1)
 get-orig-source:
 	dh_testdir
 	fakeroot dh clean
-	-git archive -v --format=tar --prefix $(pn)-$(ov)/ HEAD | \
+	-git archive -v --format=tar --prefix $(pn)-$(ov)/ \
+		--worktree-attributes HEAD | \
 		gzip -9c > $(CURDIR)/../$(pn)_$(ov).orig.tar.gz
 
 %:
